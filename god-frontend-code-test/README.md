@@ -2,7 +2,7 @@
 
 Este projeto é uma solução para o desafio de frontend web proposto pela Volvo para a vaga de desenvolvedor frontend. O desafio consistia em criar uma lista de cards com informações sobre carros da Volvo, com a funcionalidade de navegação entre os cards. Foi desenvolvido usando Next.js com TypeScript.
 
-Veja o projeto em ação [aqui](https://frontend-challenges-woad.vercel.app/).
+Veja o projeto em ação [aqui](https://frontend-challenges-adrianmouzinho.vercel.app/).
 
 ### Desktop
 
@@ -19,26 +19,26 @@ Siga as etapas abaixo para executar este projeto localmente:
 1. Clone o repositório do GitHub:
 
 ```bash
-  git clone https://github.com/adrianmouzinho/frontend-challenges.git
+git clone https://github.com/adrianmouzinho/frontend-challenges.git
 ```
 
 2. Navegue até o diretório do projeto:
 
 ```bash
-  cd frontend-challenges/god-frontend-code-test
+cd frontend-challenges/god-frontend-code-test
 ```
 
 3. Instale as dependências:
 
 
 ```bash
-  npm install
+npm install
 ```
 
 4. Inicie o servidor de desenvolvimento:
 
 ```bash
-  npm run dev
+npm run dev
 ```
 
 5. Abra seu navegador e acesse [http://localhost:3000](http://localhost:3000) para visualizar a aplicação.
