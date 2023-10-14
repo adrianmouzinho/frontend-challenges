@@ -6,8 +6,11 @@ import { Spacer } from "./Spacer";
 
 import styles from "../../public/css/home.module.css";
 import { PaginationDesktop } from "./PaginationDesktop";
+import { PaginationMobile } from "./PaginationMobile";
+import { useState } from "react";
 
 export function Home() {
+  const [selectCard, setSelectedCard] = useState(0);
   const { cars } = useCars();
 
   function onClickLeft() {
@@ -32,9 +35,17 @@ export function Home() {
     }
   }
 
+  function onSelectCardMobile(index: number) {
+    let cardList = document.getElementById('card-list');
+    let cardWidth = cardList?.firstElementChild?.clientWidth ?? 0;
+
+    cardList?.scrollTo({ left: (cardWidth + 24) * index })
+    setSelectedCard(index);
+  }
+
   return (
     <div className={styles.homeWrapper}>
-      <Text variant="ootah" subStyle="emphasis" extend={{ marginTop: '32px' }}>Our full range</Text>
+      <Text variant="ootah" subStyle="emphasis" extend={{ marginTop: '32px', padding: '0 24px' }}>Our full range</Text>
 
       <Spacer size={32} />
 
@@ -47,6 +58,8 @@ export function Home() {
       <Spacer size={32} />
 
       <PaginationDesktop onClickLeft={onClickLeft} onClickRight={onClickRight} />
+
+      <PaginationMobile totalCards={cars.length} onSelectCard={onSelectCardMobile} selectedCard={selectCard} />
     </div>
   );
 };
