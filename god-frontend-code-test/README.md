@@ -2,7 +2,7 @@
 
 Este projeto é uma solução para o desafio de frontend web proposto pela Volvo para a vaga de desenvolvedor frontend. O desafio consistia em criar uma lista de cards com informações sobre carros da Volvo, com a funcionalidade de navegação entre os cards. Foi desenvolvido usando Next.js com TypeScript.
 
-Veja o projeto em ação [aqui](https://link-do-deploy-da-sua-aplicacao.com).
+Veja o projeto em ação [aqui](https://frontend-challenges-woad.vercel.app/).
 
 ### Desktop
 
