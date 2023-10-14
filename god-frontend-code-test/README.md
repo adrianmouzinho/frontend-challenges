@@ -1,51 +1,61 @@
-# Volvo Cars (Global Online Digital)
+# Desafio Frontend - Volvo Cars
 
-## Front-end coding test (React)
+Este projeto é uma solução para o desafio de frontend web proposto pela Volvo para a vaga de desenvolvedor frontend. O desafio consistia em criar uma lista de cards com informações sobre carros da Volvo, com a funcionalidade de navegação entre os cards. Foi desenvolvido usando Next.js com TypeScript.
 
-Our team's designer has come up with a new design to show our latest and greatest recharge cars on the website.
-
-Here is how the design look like for desktop and mobile (files are stored under `docs` folder)
+Veja o projeto em ação [aqui](https://link-do-deploy-da-sua-aplicacao.com).
 
 ### Desktop
 
-![ProductListDesktop](./docs/ProductList-Desktop.png)
+![Captura de Tela Desktop](./docs/ProductList-Desktop.png)
 
 ### Mobile
 
-![ProductListDesktop](./docs/ProductList-Mobile.png)
+![Captura de Tela Mobile](./docs/ProductList-Mobile.png)
 
-The data required to render the design is under `public/api/cars.json` folder. You need to fetch the data and render it in the browser. The data looks like this:
+## Como Executar o Projeto Localmente
 
-```json
-[
-  {
-    "id": "xc90-recharge",
-    "modelName": "XC90 Recharge",
-    "bodyType": "suv",
-    "modelType": "plug-in hybrid",
-    "imageUrl": "/images/xc90_recharge.jpg"
-  }
-]
+Siga as etapas abaixo para executar este projeto localmente:
+
+1. Clone o repositório do GitHub:
+
+```bash
+  git clone https://github.com/adrianmouzinho/frontend-challenges.git
 ```
 
-The product owner is telling you that you can generate the links to the learn and shop pages of each car by concatating the `id` of the car to the learn (`/learn/`) and shop (`/shop/`) urls.
+2. Navegue até o diretório do projeto:
 
-Two extra SVG icons are also provided by our designer which are stored under `docs` folder.
+```bash
+  cd frontend-challenges/god-frontend-code-test
+```
 
-## Requirements
+3. Instale as dependências:
 
-- The project is bootstraped using [Next.js](https://nextjs.org/).
-- Browser support is modern ever-green browsers.
-- Implement this design using React and Typescript.
-- Accessibility is important.
-- Code Structure and reusablity is important.
 
-## Bonus Points:
+```bash
+  npm install
+```
 
-- If you use our design system component library, [VCC-UI](https://vcc-ui.vercel.app/)
-- If you add a filter bar on the top to filter cars by `bodyType`
+4. Inicie o servidor de desenvolvimento:
 
-## Submission
+```bash
+  npm run dev
+```
 
-Clone this repository to get started. Due to a number of reasons, not least privacy, you will be asked to zip your solution and mail it in, instead of submitting a pull-request. In order to maintain an unbiased reviewing process, please ensure to keep your name or other Personal Identifiable Information (PII) from the code.
+5. Abra seu navegador e acesse [http://localhost:3000](http://localhost:3000) para visualizar a aplicação.
 
+## Recursos e Tecnologias Utilizadas
+
+- Next.js
+- TypeScript
+- CSS
+- VCC-UI
+
+## Descrição do Desenvolvimento
+
+Neste projeto, utilizei a biblioteca de componentes [VCC-UI](https://vcc-ui.vercel.app/) da Volvo para criar uma experiência de usuário consistente e atrativa. A VCC-UI oferece um conjunto de componentes prontos para uso que se integram perfeitamente ao design dos produtos da Volvo. Alguns dos componentes VCC-UI que foram utilizados incluem: Text, Flex, Link, Row, Spacer e IconButton. Essa biblioteca, no entanto, apresentou vários problemas durante o desenvolvimento do projeto.
+
+Este README fornece um guia básico para a compreensão do projeto. Não hesite em explorar o código-fonte para obter mais detalhes sobre a integração da VCC-UI e outros aspectos do desenvolvimento.
+
+## Licença
+
+Este projeto é licenciado sob a Licença MIT.
