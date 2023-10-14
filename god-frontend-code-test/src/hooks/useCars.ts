@@ -7,7 +7,7 @@ export function useCars() {
   const [cars, setCars] = useState<Car[]>([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/api/cars")
+    axios.get("/api/cars")
       .then(response => {
         setCars(response.data)
       })
