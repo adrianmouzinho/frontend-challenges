@@ -78,8 +78,14 @@ form.form-container {
       cursor: pointer;
       transition: all 300ms;
 
-      &:hover {
+      &:not([disabled]):hover {
         filter: brightness(0.95);
+      }
+
+      &:disabled {
+        background-color: lightgray;
+        opacity: 0.5;
+        cursor: not-allowed;
       }
     }
 
@@ -101,5 +107,9 @@ form.form-container {
       align-items: center;
       justify-content: center;
     }
+  }
+
+  .error {
+    color: var(--red);
   }
 }

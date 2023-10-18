@@ -1,4 +1,4 @@
-<form class="form-container">
+<form class="form-container" [formGroup]="formGroup">
   <span class="time">
     <img src="/assets/images/png/icon-hour.png" alt="Ícone de relógio">
     Horário
@@ -8,7 +8,7 @@
     <h3>Qual período quer treinar?</h3>
     <div class="time-day">
       <div>
-        <input type="radio" name="morning" id="morning">
+        <input type="radio" name="timeOfDay" id="morning" value="morning" formControlName="timeOfDay">
         <label for="morning">Manhã</label>
       </div>
       <span>06:00 às 12:00</span>
@@ -16,7 +16,7 @@
 
     <div class="time-day">
       <div>
-        <input type="radio" name="afternoon" id="afternoon">
+        <input type="radio" name="timeOfDay" id="afternoon" value="afternoon" formControlName="timeOfDay">
         <label for="afternoon">Tarde</label>
       </div>
       <span>12:01 às 18:00</span>
@@ -24,23 +24,31 @@
 
     <div class="time-day">
       <div>
-        <input type="radio" name="night" id="night">
+        <input type="radio" name="timeOfDay" id="night" value="night" formControlName="timeOfDay">
         <label for="night">Noite</label>
       </div>
       <span>18:01 às 23:00</span>
     </div>
   </div>
 
-  <div class="units-found">
+  <span class="error" *ngIf="submitted && formGroup.get('timeOfDay')?.errors?.['required']">
+    Você precisa escolher o período que deseja treinar
+  </span>
+
+  <div class=" units-found">
     <div>
-      <input type="checkbox" name="show-closed-units" id="show-closed-units">
+      <input type="checkbox" name="showClosedUnits" id="show-closed-units" formControlName="showClosedUnits">
       <label for="show-closed-units">Exibir unidades fechadas</label>
     </div>
-    <span>Resultado encontrados: <strong>{{ unitsFound }}</strong></span>
+    <span>Resultado encontrados: <strong>{{ unitsFound.length }}</strong></span>
   </div>
 
   <div class="actions">
-    <button type="submit" class="btn find-units">Encontrar unidades</button>
-    <button type="button" class="btn clear">Limpar</button>
+    <button type="submit" class="btn find-units" (click)="onSubmit()">
+      Encontrar unidades
+    </button>
+    <button type="button" class="btn clear" (click)="onClear()">
+      Limpar
+    </button>
   </div>
 </form>
