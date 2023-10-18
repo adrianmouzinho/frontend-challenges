@@ -4,9 +4,9 @@
     Horário
   </span>
 
-  <div class="periods-day">
+  <div class="times-day">
     <h3>Qual período quer treinar?</h3>
-    <div class="period">
+    <div class="time-day">
       <div>
         <input type="radio" name="morning" id="morning">
         <label for="morning">Manhã</label>
@@ -14,7 +14,7 @@
       <span>06:00 às 12:00</span>
     </div>
 
-    <div class="period">
+    <div class="time-day">
       <div>
         <input type="radio" name="afternoon" id="afternoon">
         <label for="afternoon">Tarde</label>
@@ -22,7 +22,7 @@
       <span>12:01 às 18:00</span>
     </div>
 
-    <div class="period">
+    <div class="time-day">
       <div>
         <input type="radio" name="night" id="night">
         <label for="night">Noite</label>
@@ -36,7 +36,7 @@
       <input type="checkbox" name="show-closed-units" id="show-closed-units">
       <label for="show-closed-units">Exibir unidades fechadas</label>
     </div>
-    <span>Resultado encontrados: <strong>0</strong></span>
+    <span>Resultado encontrados: <strong>{{ unitsFound }}</strong></span>
   </div>
 
   <div class="actions">
