@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { UnitService } from 'src/app/services/unit.service';
+import { Location } from 'src/app/types/location.interface';
 
 @Component({
   selector: 'app-form',
@@ -10,9 +11,9 @@ import { UnitService } from 'src/app/services/unit.service';
 })
 export class FormComponent implements OnInit {
 
-  unitsFound = [];
+  units: Location[] = [];
+  filteredUnits: Location[] = [];
   formGroup!: FormGroup;
-  submitted = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -20,25 +21,25 @@ export class FormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.unitService.getAllUnits().subscribe(data => console.log(data));
     this.formGroup = this.formBuilder.group({
-      timeOfDay: ['', [Validators.required]],
-      showClosedUnits: false
-    })
+      timeOfDay: '',
+      showClosedUnits: true
+    });
+
+    this.unitService.getAllUnits().subscribe(data => {
+      this.units = this.filteredUnits = data.locations;
+    });
   }
 
   onSubmit() {
-    this.submitted = true;
-
-    if (this.formGroup.invalid) {
-      return;
+    if (!this.formGroup.value.showClosedUnits) {
+      this.filteredUnits = this.units.filter(unit => unit.opened === true);
+    } else {
+      this.filteredUnits = this.units;
     }
-
-    console.log(this.formGroup.value)
   }
 
   onClear() {
-    this.submitted = false;
     this.formGroup.reset();
   }
 

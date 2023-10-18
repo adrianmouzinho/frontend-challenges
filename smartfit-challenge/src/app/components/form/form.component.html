@@ -31,16 +31,12 @@
     </div>
   </div>
 
-  <span class="error" *ngIf="submitted && formGroup.get('timeOfDay')?.errors?.['required']">
-    Você precisa escolher o período que deseja treinar
-  </span>
-
   <div class=" units-found">
     <div>
       <input type="checkbox" name="showClosedUnits" id="show-closed-units" formControlName="showClosedUnits">
       <label for="show-closed-units">Exibir unidades fechadas</label>
     </div>
-    <span>Resultado encontrados: <strong>{{ unitsFound.length }}</strong></span>
+    <span>Resultado encontrados: <strong>{{ filteredUnits.length }}</strong></span>
   </div>
 
   <div class="actions">
