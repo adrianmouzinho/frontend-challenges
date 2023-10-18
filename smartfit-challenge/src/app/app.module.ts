@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FormComponent } from './components/form/form.component';
 import { LegendComponent } from './components/legend/legend.component';
 import { ListComponent } from './components/list/list.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ListComponent } from './components/list/list.component';
     HeaderComponent,
     FormComponent,
     LegendComponent,
-    ListComponent
+    ListComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
